@@ -1,4 +1,5 @@
 FROM node:8
+ARG URL
 WORKDIR /home/niveus/blog-likeend
 COPY package.json /home/niveus/blog-likeend/
 RUN npm install && npm install express && npm install path
