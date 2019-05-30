@@ -69,8 +69,7 @@ app.get("/", (req, res) =>{
   var s = process.env.an_env_var || ""; 
   if(s == ""){
      console.log("hello",s)
-     res.status(400);
-     res.send()
+     res.send(404)
     
   }else{
     
