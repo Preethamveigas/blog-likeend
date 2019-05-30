@@ -66,12 +66,17 @@ app.use("/api/posts", posts);
 
 //@router test
 app.get("/", (req, res) =>{
-  if(process.env.an_env_var == ""){
-     res.sendstatus(200)
+  var s = process.env.an_env_var || ""; 
+  if(s == ""){
+    
+     res.sendstatus(200);
+    
   }else{
+    
     res.json({
     greet: "hello"
-  })
+    })
+    
   }
   
 
