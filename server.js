@@ -68,8 +68,9 @@ app.use("/api/posts", posts);
 app.get("/", (req, res) =>{
   var s = process.env.an_env_var || ""; 
   if(s == ""){
-    
-     res.sendstatus(200);
+     console.log("hello",s)
+     res.status(400);
+     res.send()
     
   }else{
     
