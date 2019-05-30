@@ -16,7 +16,7 @@ app.use(
 app.use(bodyParser.json());
 
 //PORT TO RUN
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 8080;
 
 // Db config
 const db = require("./config/keys").mongoURI;
