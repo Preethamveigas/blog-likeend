@@ -74,11 +74,11 @@ console.log(req.headers)
   var s = process.env.an_env_var || ""; 
   if(s == ""){
      console.log("hello",s)
-     res.send(404)
+     res.status(404)
     
   }else{
     
-    res.json({
+    res.status(200).json({
     greet: "hello"
     })
     
