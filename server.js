@@ -75,6 +75,7 @@ console.log(req.headers)
   if(s == ""){
      console.log("hello",s)
      res.status(404)
+     res.end()
     
   }else{
     
