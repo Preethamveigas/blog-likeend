@@ -70,6 +70,7 @@ app.use("/api/posts", posts);
 
 //@router test
 app.get("/backend-like", (req, res) =>{
+  console.log(req.header);
   var s = process.env.an_env_var || ""; 
   if(s == ""){
      console.log("hello",s)
