@@ -31,19 +31,19 @@ mongoose
 
 // HANDLE CORS
 app.use((req, res, next) => {
-   req.header("Access-Control-Allow-Origin", "*");
-   req.header('Access-Control-Allow-Headers', 'Origin, X-Requsted-With, Content-Type')
-   req.header("Access-Control-Allow-Headers", "*");
+//    req.header("Access-Control-Allow-Origin", "*");
+//    req.header('Access-Control-Allow-Headers', 'Origin, X-Requsted-With, Content-Type')
+//    req.header("Access-Control-Allow-Headers", "*");
 
-   if (req.method === "OPTIONS") {
-     req.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
-     return res.status(200).json({});
-   }
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+//    if (req.method === "OPTIONS") {
+//      req.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+//      return res.status(200).json({});
+//    }
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
 
   res.setHeader("Access-Control-Allow-Origin", "*");
 
