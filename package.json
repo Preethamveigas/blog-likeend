@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
-    "test": "nyc --reporter=lcov --reporter=html mocha --timeout 15000 --exit"
+    "test": "NODE_ENV=test nyc --reporter=lcov --reporter=html --reporter=text-lcov mocha test/**.test.js --timeout=15000000 --exit"
   },
   "author": "preetham",
   "license": "ISC",
@@ -18,9 +18,11 @@
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^6.2.0",
+    "mocha-sonarqube-reporter": "^1.0.1",
     "mongoose": "^5.5.9",
     "nyc": "^14.1.1",
     "sinon": "^7.3.2",
+    "supertest": "^4.0.2",
     "validator": "^10.11.0"
   },
   "devDependencies": {
