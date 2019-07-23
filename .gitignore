@@ -1,2 +1,6 @@
 /node_modules
 package-lock.*
+/coverage
+/.nyc*
+.nyc_*
+/nyc_*

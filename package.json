@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
-    "test": "nyc mocha --timeout 15000 --exit"
+    "test": "nyc --reporter=lcov --reporter=html mocha --timeout 15000 --exit"
   },
   "author": "preetham",
   "license": "ISC",
