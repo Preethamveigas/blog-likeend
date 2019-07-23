@@ -1,19 +1,27 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
 //validator post input
 
 //Post model
-const Post = require("../../models/Post");
+const Post = require('../../models/Post');
 //User model
-const User = require("../../models/User");
+const User = require('../../models/User');
 
 // @route   POST api/posts/like/:id
 // @desc    Like post
 // @access  Public
 
-router.post("/like/:id", (req, res) => {
-  console.log("adding like", req.body);
+// router.get('/all', (r, s) => {
+//   Post.find()
+//     .then(post => {
+//       s.json(post);
+//     })
+//     .catch(e => s.json(e));
+// });
+
+router.post('/like/:id', (req, res) => {
+  console.log('adding like', req.body);
 
   User.findOne({
     _id: req.body.usrId
@@ -25,20 +33,14 @@ router.post("/like/:id", (req, res) => {
         const UserLikes = post.like.filter(usrlike => {
           return String(usrlike.user).trim() === String(usr._id).trim();
         });
-        console.log(UserLikes);
         console.log(
           post.like.filter(usrlike => {
             return String(usrlike.user).trim() === String(usr._id).trim();
-            // console.log(
-            //   String(usrlike.user).trim(),
-            //   "",
-            //   String(usr._id).trim()
-            // );
           })
         );
         if (UserLikes.length > 0) {
           return res.status(200).json({
-            like: "user already liked"
+            like: 'user already liked'
           });
         }
         post.like.unshift({
@@ -49,7 +51,7 @@ router.post("/like/:id", (req, res) => {
     })
     .catch(err =>
       res.status(400).json({
-        post: "there is a problem in posting a like"
+        post: 'there is a problem in posting a like'
       })
     );
 });
@@ -57,7 +59,7 @@ router.post("/like/:id", (req, res) => {
 // @route   POST api/posts/unlike/:id
 // @desc    Unlike post
 // @access  Public
-router.post("/unlike/:id", (req, res) => {
+router.post('/unlike/:id', (req, res) => {
   User.findOne({
     _id: String(req.body.usrId).trim()
   }).then(usr => {
@@ -69,7 +71,7 @@ router.post("/unlike/:id", (req, res) => {
 
         if (likeUsr.length < 1) {
           return res.status(400).json({
-            notliked: "You have not yet liked this post"
+            notliked: 'You have not yet liked this post'
           });
         }
 
@@ -95,7 +97,7 @@ router.post("/unlike/:id", (req, res) => {
       })
       .catch(err =>
         res.status(404).json({
-          postnotfound: "No post found"
+          postnotfound: 'No post found'
         })
       );
   });
